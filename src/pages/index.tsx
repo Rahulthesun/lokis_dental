@@ -11,6 +11,11 @@ import {
 } from 'react-icons/fa';
 
 import { Award, Users, Clock, Shield, Heart } from 'lucide-react';
+import Footer from "../components/Footer"
+import MapSection from "../components/MapSection"
+import ContactLocationSection from '../components/GetInTouch';
+import TeethAlignmentSection from '../components/TeethAlignment';
+
 
 
 const Home = () => {
@@ -61,7 +66,7 @@ const Home = () => {
     { name: "General Dentistry", icon: FaTooth, description: "Complete dental care including check-ups, cleanings, and preventive treatments" },
     { name: "Cosmetic Dentistry", icon: FaSmile, description: "Teeth whitening, veneers, and smile designing for a perfect smile" },
     { name: "Orthodontic Treatments", icon: FaTeeth, description: "Braces, aligners, and corrective treatments for perfect teeth alignment" },
-    { name: "Prosthodontics", icon: FaGem, description: "Dental crowns, bridges, and implants for complete smile restoration" },
+    { name: "Prosthodontics", icon: FaGem, description: "Dental crowns, bridges, dentures and implants for complete smile restoration" },
     { name: "Endodontics", icon: FaStethoscope, description: "Root canal treatments and pulp therapy with advanced techniques" },
     { name: "Pediatric Dentistry", icon: FaChild, description: "Specialized dental care for children in a fun, comfortable environment" },
     { name: "Periodontics", icon: FaShieldAlt, description: "Gum disease treatment and prevention for optimal oral health" },
@@ -73,7 +78,7 @@ const Home = () => {
     { icon: FaHeart, title: "Painless Treatments", description: "Advanced pain management techniques for comfortable procedures" },
     { icon: FaChild, title: "Kid-Friendly Care", description: "Specialized approach to make dental visits fun for children" },
     { icon: FaStar, title: "5-Star Ratings", description: "Consistently rated excellent by our satisfied patients" },
-    { icon: FaMoneyBillWave, title: "Affordable Plans", description: "Flexible payment options and insurance acceptance" },
+    { icon: FaMoneyBillWave, title: "Flexible Payment", description: "Flexible payment options to make quality dental care affordable and accessible for everyone." },
   ];
 
   useEffect(() => {
@@ -109,67 +114,78 @@ const Home = () => {
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
 
+
+      
       <div className="min-h-screen bg-white font-inter">
         {/* Enhanced Navbar */}
-        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white py-4`}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
-              <div className="flex items-center">
-                <img src={'/assets/logo.png'} width={'100px'}/>
-              </div>
-              
-              {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center space-x-8">
-                {navItems.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className={`text-grey-800 hover:text-lime-300 transition-colors duration-200 font-semibold`}
-                  >
-                    {item.name}
-                  </a>
-                ))}
-                <button className="bg-lime-500 text-white px-6 py-2 rounded-full hover:bg-lime-600 transition-all duration-300 shadow-lg hover:shadow-lime-400/30 transform hover:scale-105">
-                  Book Appointment
-                </button>
-              </div>
+        {/* Enhanced Navbar */}
 
-              {/* Mobile menu button */}
-              <div className="md:hidden">
-                <button
-                  onClick={() => setIsNavOpen(!isNavOpen)}
-                  className={`${scrolled ? 'text-gray-700' : 'text-white'} hover:text-lime-500 focus:outline-none`}
-                >
-                  {isNavOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-                </button>
-              </div>
-            </div>
-          </div>
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white py-3 shadow-md' : 'bg-transparent py-6'}`}>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex justify-between items-center h-16">
+      <div className="flex items-center">
+        <img 
+          src={scrolled ? '/assets/logo.png' : '/assets/white_logo.png'} 
+          width={scrolled ? '150px' : '180px'}
+          className="transition-all duration-500"
+          alt="Dr. Loki's Dental Clinic Logo"
+        />
+      </div>
+      
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex items-center space-x-8">
+        {navItems.map((item) => (
+          <a
+            key={item.name}
+            href={item.href}
+            className={`${scrolled ? 'text-gray-800' : 'text-white'} hover:text-lime-400 transition-colors duration-200 font-medium text-lg`}
+          >
+            {item.name}
+          </a>
+        ))}
+        <button className="bg-lime-500 text-white px-6 py-2 rounded-full hover:bg-lime-600 transition-all duration-300 shadow-lg hover:shadow-lime-400/30 transform hover:scale-105 font-medium">
+          Book Appointment
+        </button>
+      </div>
 
-          {/* Mobile Navigation */}
-          {isNavOpen && (
-            <div className="md:hidden bg-white shadow-xl">
-              <div className="px-2 pt-2 pb-3 space-y-2">
-                {navItems.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="block px-3 py-3 text-gray-700 hover:text-lime-500 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200"
-                    onClick={() => setIsNavOpen(false)}
-                  >
-                    {item.name}
-                  </a>
-                ))}
-                <button className="w-full text-center bg-lime-500 text-white px-3 py-3 rounded-md hover:bg-lime-600 transition-all duration-300 font-medium shadow-md">
-                  Book Appointment
-                </button>
-              </div>
-            </div>
-          )}
-        </nav>
+      {/* Mobile menu button */}
+      <div className="md:hidden">
+        <button
+          onClick={() => setIsNavOpen(!isNavOpen)}
+          className={`${scrolled ? 'text-gray-800' : 'text-white'} hover:text-lime-400 focus:outline-none transition-colors duration-200`}
+          aria-label="Toggle navigation menu"
+        >
+          {isNavOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  {/* Mobile Navigation */}
+  {isNavOpen && (
+    <div className="md:hidden bg-white shadow-xl">
+      <div className="px-2 pt-2 pb-3 space-y-2">
+        {navItems.map((item) => (
+          <a
+            key={item.name}
+            href={item.href}
+            className="block px-3 py-3 text-gray-800 hover:text-lime-500 hover:bg-gray-50 rounded-md font-medium transition-colors duration-200 text-lg"
+            onClick={() => setIsNavOpen(false)}
+          >
+            {item.name}
+          </a>
+        ))}
+        <button className="w-full text-center bg-lime-500 text-white px-3 py-3 rounded-md hover:bg-lime-600 transition-all duration-300 font-medium shadow-md">
+          Book Appointment
+        </button>
+      </div>
+    </div>
+  )}
+</nav>
+
 
         {/* Hero Section with Image and Overlayed Text */}
-        <section id="home" className="relative mt-20 h-screen w-full flex items-center justify-center overflow-hidden bg-black">
+        <section id="home" className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
           {/* Hero Image Fullscreen */}
           <div className="absolute inset-0 w-full h-full">
             <img
@@ -183,7 +199,7 @@ const Home = () => {
           </div>
           {/* Text Overlay */}
           <div className="w-full h-full relative z-10 flex flex-col items-center justify-center text-center px-4 w-full backdrop-blur-sm">
-            <h1 className="text-4xl md:text-7xl tracking-tight font-bold text-white font-poppins mb-6 drop-shadow-lg leading-tight ">
+            <h1 className="text-5xl md:text-7xl pt-20 mt-10 tracking-tight font-bold text-white font-poppins mb-6 drop-shadow-lg leading-tight ">
               Your Smile<br />
               <span className="text-lime-300">Our Pride</span>
             </h1>
@@ -191,10 +207,10 @@ const Home = () => {
               To help you achieve the beautiful smile you've always desired with our expert dental care and personalized treatments.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-lime-400 to-lime-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-lime-500 hover:to-lime-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-lime-400/25">
+              <button onClick={() => window.location.href = '#contact'} className="bg-gradient-to-r from-lime-400 to-lime-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-lime-500 hover:to-lime-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-lime-400/25">
                 Book Free Consultation
               </button>
-              <button className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/20 hover:border-white/50 transform hover:scale-105 transition-all duration-300">
+              <button onClick={() => window.location.href = 'https://your-link-here.com'} className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/20 hover:border-white/50 transform hover:scale-105 transition-all duration-300">
                 Learn More
               </button>
             </div>
@@ -271,8 +287,9 @@ const Home = () => {
         </section>
 
         {/* Meet the Doctor Section */}
-        <section id="doctor" className="py-20 px-10 relative overflow-hidden bg-white">
-          <div className="absolute inset-0 opacity-10">
+        <section id="doctor" className="py-16 sm:py-20 px-4 sm:px-10 relative overflow-hidden bg-white">
+          {/* Background SVG blob */}
+          <div className="absolute inset-0 opacity-10 pointer-events-none">
             <div 
               className="absolute inset-0 bg-cover bg-center"
               style={{
@@ -280,80 +297,84 @@ const Home = () => {
               }}
             ></div>
           </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+          <div className="relative max-w-7xl mx-auto">
+            {/* Section heading */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center mb-16"
+              className="text-center mb-12 sm:mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 font-poppins mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 font-poppins mb-4">
                 Meet Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-500 to-emerald-500">Dentist</span>
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-lime-400 to-emerald-500 mx-auto"></div>
+              <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-lime-400 to-emerald-500 mx-auto"></div>
             </motion.div>
             
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Content grid */}
+            <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 items-center">
+              {/* Doctor Image - show first on mobile */}
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="relative"
+                className="relative order-1 lg:order-2"
               >
-                <div className="relative h-screen">
-                  <div className="absolute -inset-2 bg-gradient-to-r from-lime-400/20 to-emerald-400/20 rounded-xl blur-lg"></div>
-                  <div className="relative bg-white p-8 rounded-xl shadow-2xl border border-white/30">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-800 font-poppins mb-8 leading-tight">
-                      Dr. <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-500 to-emerald-500">Lokeswari</span>
-                    </h2>
-                    <div className="mb-6 p-6 bg-gradient-to-r from-lime-50 to-emerald-50 rounded-lg border border-lime-100">
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">BDS, MDS</h3>
-                      <p className="text-gray-700">Oral & Maxillofacial Surgeon and Craniofacial Orthopedics</p>
-                    </div>
-                    <div className="space-y-4 text-gray-700 mb-6">
-                      <div className="flex items-center">
-                        <FaAward className="text-lime-500 mr-3 text-xl" />
-                        <span>Member in Dental council of India</span>
-                      </div>
-                      <div className="flex items-center">
-                        <FaAward className="text-lime-500 mr-3 text-xl" />
-                        <span>Member in Indian orthodontic Society</span>
-                      </div>
-                      <div className="flex items-center">
-                        <FaAward className="text-lime-500 mr-3 text-xl" />
-                        <span>In partnership with TAC Aligners</span>
-                      </div>
-                    </div>
-                    <p className="text-gray-700 leading-relaxed mb-6">
-                      Dr. Lokeswari brings years of experience and expertise in comprehensive dental care. With a strong focus on delivering excellent patient care, she ensures every treatment is comfortable and effective.
-                    </p>
-                    <button className="bg-gradient-to-r from-lime-500 to-emerald-500 text-white px-8 py-3 rounded-full font-semibold hover:from-lime-600 hover:to-emerald-600 transition-all duration-300 shadow-lg">
-                      Schedule a Consultation
-                    </button>
-                  </div>
+                <div className="relative z-10 text-center px-6 sm:px-8">
+                  <img
+                    src="/assets/dr_img.jpg"
+                    alt="Dr. Lokeswari"
+                    className="mx-auto w-48 sm:w-56 md:w-64 rounded-full object-cover object-center shadow-xl"
+                  />
                 </div>
+                <div className="absolute top-6 right-6 w-8 h-8 bg-lime-400/60 rounded-full animate-pulse"></div>
+                <div className="absolute bottom-6 left-6 w-6 h-6 bg-emerald-400/60 rounded-full animate-bounce"></div>
               </motion.div>
-              
+            
+              {/* Doctor Text Info - show second on mobile */}
               <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="relative"
+                className="relative order-2 lg:order-1"
               >
-                <div className="relative">
-                      <div className="relative z-10 text-center p-8">
-                        <div className="w-auto h-18">
-                          <img src={'/assets/dr_img.jpg'} className={`object-cover object-centre rounded-full`}/>
-                        </div>
-                      
-                      </div>
-                      <div className="absolute top-6 right-6 w-8 h-8 bg-lime-400/60 rounded-full animate-pulse"></div>
-                      <div className="absolute bottom-6 left-6 w-6 h-6 bg-emerald-400/60 rounded-full animate-bounce"></div>
+                <div className="relative bg-white p-6 sm:p-8 rounded-xl shadow-2xl border border-white/30">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 font-poppins mb-6">
+                    Dr. <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-500 to-emerald-500">Lokeswari</span>
+                  </h2>
+                  <div className="mb-6 p-4 sm:p-6 bg-gradient-to-r from-lime-50 to-emerald-50 rounded-lg border border-lime-100">
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">BDS, MDS</h3>
+                    <p className="text-gray-700 text-sm sm:text-base">Orthodontics and Dentofacial Orthopedics</p>
+                  </div>
+                  <div className="space-y-3 sm:space-y-4 text-gray-700 mb-6 text-sm sm:text-base">
+                    <div className="flex items-center">
+                      <FaAward className="text-lime-500 mr-2 sm:mr-3 text-lg sm:text-xl" />
+                      <span>Member in Dental Council of India</span>
+                    </div>
+                    <div className="flex items-center">
+                      <FaAward className="text-lime-500 mr-2 sm:mr-3 text-lg sm:text-xl" />
+                      <span>Member in Indian Orthodontic Society</span>
+                    </div>
+                    <div className="flex items-center">
+                      <FaAward className="text-lime-500 mr-2 sm:mr-3 text-lg sm:text-xl" />
+                      <span>Member in Indian Dental Association</span>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-6">
+                    Dr. Lokeswari brings years of experience and expertise in comprehensive dental care. With a strong focus on delivering excellent patient care, she ensures every treatment is comfortable and effective.
+                  </p>
+                  <button className="w-full sm:w-auto bg-gradient-to-r from-lime-500 to-emerald-500 text-white px-6 py-3 rounded-full font-semibold hover:from-lime-600 hover:to-emerald-600 transition-all duration-300 shadow-lg">
+                    Schedule a Consultation
+                  </button>
                 </div>
               </motion.div>
             </div>
           </div>
         </section>
+
+
+        <TeethAlignmentSection/>
 
         {/* Services Grid */}
         <section id="services" className="py-20 relative overflow-hidden bg-gradient-to-br from-gray-50 to-lime-50">
@@ -577,7 +598,7 @@ const Home = () => {
                   🎉 Limited Time Offer - 10% OFF
                 </h3>
                 <p className="text-gray-800 text-md mt-5">
-                  Get 20% off on teeth cleaning or whitening services! 
+                  Get 10% off on teeth cleaning or whitening services! 
                   <span className="font-bold"> Valid until August 1st , 2025</span>
                 </p>
               </div>
@@ -588,230 +609,10 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Contact Form */}
-        <section id="contact" className="py-20 bg-gradient-to-br from-gray-700 to-gray-900 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div 
-              className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage: "url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 800\"%3E%3Cpath d=\"M0,100 Q300,50 600,100 T1200,100 V800 H0 Z\" fill=\"%23C1D72F\" opacity=\"0.05\"/%3E%3C/svg%3E')"
-              }}
-            ></div>
-          </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <h2 className="text-3xl md:text-4xl font-bold text-white font-poppins mb-6">
-                  Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-emerald-400">Touch</span>
-                </h2>
-                <p className="text-gray-300 text-lg mb-8">
-                  Ready to transform your smile? Schedule your appointment today and take the first step towards better oral health.
-                </p>
-                
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="bg-lime-500 p-3 rounded-full mr-4">
-                      <FaPhone className="text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-medium mb-1">Call Us</h4>
-                      <p className="text-gray-300">+91 9840183964</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="bg-lime-500 p-3 rounded-full mr-4">
-                      <FaEnvelope className="text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-medium mb-1">Email Us</h4>
-                      <p className="text-gray-300">hello@drlokis.com</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="bg-lime-500 p-3 rounded-full mr-4">
-                      <FaMapMarkerAlt className="text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-medium mb-1">Visit Us</h4>
-                      <p className="text-gray-300">R-13, 3rd main road, Bharathi Salai, Nolambur Phase II, Mogappair West, Chennai</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="flex space-x-4 mt-8">
-                  <a href="#" className="bg-gray-600 hover:bg-gray-500 p-3 rounded-full transition-colors duration-200">
-                    <FaFacebook className="text-white" />
-                  </a>
-                  <a href="#" className="bg-gray-600 hover:bg-gray-500 p-3 rounded-full transition-colors duration-200">
-                    <FaInstagram className="text-white" />
-                  </a>
-                  <a href="#" className="bg-gray-600 hover:bg-gray-500 p-3 rounded-full transition-colors duration-200">
-                    <FaTwitter className="text-white" />
-                  </a>
-                  <a href="#" className="bg-gray-600 hover:bg-gray-500 p-3 rounded-full transition-colors duration-200">
-                    <FaWhatsapp className="text-white" />
-                  </a>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="relative"
-              >
-                <div className="absolute -inset-2 bg-gradient-to-r from-lime-400/30 to-emerald-400/30 rounded-xl blur-lg"></div>
-                <div className="relative bg-white rounded-xl p-8 shadow-2xl">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6 font-poppins">Schedule Your Visit</h3>
-                  <form className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <input
-                        type="text"
-                        placeholder="Your Name"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-transparent"
-                      />
-                      <input
-                        type="tel"
-                        placeholder="Phone Number"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-transparent"
-                      />
-                    </div>
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-transparent"
-                    />
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-transparent">
-                        <option value="">Select Service</option>
-                        <option value="general">General Dentistry</option>
-                        <option value="cosmetic">Cosmetic Dentistry</option>
-                        <option value="orthodontics">Orthodontics</option>
-                        <option value="pediatric">Pediatric Dentistry</option>
-                      </select>
-                      <input
-                        type="date"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-transparent"
-                      />
-                    </div>
-                    <textarea
-                      placeholder="Your Message"
-                      rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-transparent"
-                    ></textarea>
-                    <button
-                      type="submit"
-                      className="w-full bg-gradient-to-r from-lime-500 to-emerald-500 text-white py-4 rounded-lg font-semibold hover:from-lime-600 hover:to-emerald-600 transition-all duration-300 shadow-lg transform hover:scale-[1.02]"
-                    >
-                      Book My Appointment
-                    </button>
-                  </form>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+        <ContactLocationSection/>
 
         {/* Footer */}
-        <footer className="bg-gray-900 text-white pt-20 pb-12 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div 
-              className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage: "url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 800\"%3E%3Cpath d=\"M0,100 Q300,50 600,100 T1200,100 V800 H0 Z\" fill=\"%23C1D72F\" opacity=\"0.05\"/%3E%3C/svg%3E')"
-              }}
-            ></div>
-          </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-              <div>
-                <div className="flex items-center mb-6">
-                <img src={'/assets/white_logo.png'} width={'200px'}/>
-                </div>
-                <p className="text-gray-400 mb-6 ml-4">
-                  Your premier destination for exceptional dental care and orthodontic treatments in Chennai.
-                </p>
-                <div className="flex space-x-4 ml-4">
-                  <a href="#" className="bg-gray-700 hover:bg-lime-500 p-3 rounded-full transition-colors duration-200">
-                    <FaFacebook className="text-white" />
-                  </a>
-                  <a href="#" className="bg-gray-700 hover:bg-lime-500 p-3 rounded-full transition-colors duration-200">
-                    <FaInstagram className="text-white" />
-                  </a>
-                  <a href="#" className="bg-gray-700 hover:bg-lime-500 p-3 rounded-full transition-colors duration-200">
-                    <FaTwitter className="text-white" />
-                  </a>
-                  <a href="#" className="bg-gray-700 hover:bg-lime-500 p-3 rounded-full transition-colors duration-200">
-                    <FaWhatsapp className="text-white" />
-                  </a>
-                </div>
-              </div>
-              
-              <div>
-                <h3 className="text-lg font-semibold mb-6 font-poppins">Quick Links</h3>
-                <ul className="space-y-3">
-                  <li><a href="#home" className="text-gray-400 hover:text-lime-500 transition-colors duration-200">Home</a></li>
-                  <li><a href="#about" className="text-gray-400 hover:text-lime-500 transition-colors duration-200">About Us</a></li>
-                  <li><a href="#doctor" className="text-gray-400 hover:text-lime-500 transition-colors duration-200">Our Doctor</a></li>
-                  <li><a href="#services" className="text-gray-400 hover:text-lime-500 transition-colors duration-200">Services</a></li>
-                  <li><a href="#contact" className="text-gray-400 hover:text-lime-500 transition-colors duration-200">Contact</a></li>
-                </ul>
-              </div>
-              
-              <div>
-                <h3 className="text-lg font-semibold mb-6 font-poppins">Our Services</h3>
-                <ul className="space-y-3">
-                  <li><a href="#" className="text-gray-400 hover:text-lime-500 transition-colors duration-200">General Dentistry</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-lime-500 transition-colors duration-200">Cosmetic Dentistry</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-lime-500 transition-colors duration-200">Orthodontics</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-lime-500 transition-colors duration-200">Pediatric Dentistry</a></li>
-                  <li><a href="#" className="text-gray-400 hover:text-lime-500 transition-colors duration-200">Teeth Whitening</a></li>
-                </ul>
-              </div>
-              
-              <div>
-                <h3 className="text-lg font-semibold mb-6 font-poppins">Contact Info</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <FaPhone className="text-lime-500 mt-1 mr-3" />
-                    <span className="text-gray-400">+91 9840183964</span>
-                  </div>
-                  <div className="flex items-start">
-                    <FaEnvelope className="text-lime-500 mt-1 mr-3" />
-                    <span className="text-gray-400">hello@drlokis.com</span>
-                  </div>
-                  <div className="flex items-start">
-                    <FaMapMarkerAlt className="text-lime-500 mt-1 mr-3" />
-                    <span className="text-gray-400"> R-13, 3rd main road, Bharathi Salai, Nolambur Phase II, Mogappair West, Chennai</span>
-                  </div>
-                  <div className="flex items-start">
-                    <FaClock className="text-lime-500 mt-1 mr-3" />
-                    <div>
-                      <p className="text-gray-400">Mon-Fri: 9:00 AM - 7:00 PM</p>
-                      <p className="text-gray-400">Sat: 9:00 AM - 2:00 PM</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-              <p className="text-gray-500">&copy; {new Date().getFullYear()} Dr.LOKI's Dental & Orthodontic Centre. All rights reserved.</p>
-              <div className="flex justify-center space-x-6 mt-4">
-                <a href="#" className="text-gray-500 hover:text-lime-500 transition-colors duration-200 text-sm">Privacy Policy</a>
-                <a href="#" className="text-gray-500 hover:text-lime-500 transition-colors duration-200 text-sm">Terms of Service</a>
-                <a href="#" className="text-gray-500 hover:text-lime-500 transition-colors duration-200 text-sm">Sitemap</a>
-              </div>
-            </div>
-          </div>
-        </footer>
-
+        <Footer/>
         {/* Floating WhatsApp Button */}
         
         
@@ -833,7 +634,7 @@ const Home = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          <a href="https://wa.me/919840568596" target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white p-4 rounded-full shadow-xl hover:bg-green-600 transition-all duration-300 flex items-center justify-center">
+          <a href="https://wa.me/919840183964?text=Hi%2C%20I%E2%80%99d%20like%20to%20book%20a%20dental%20appointment." target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white p-4 rounded-full shadow-xl hover:bg-green-600 transition-all duration-300 flex items-center justify-center">
             <FaWhatsapp className="text-2xl" />
             <span className="ml-2 absolute bg-white text-green-500 text-xs font-bold px-2 py-1 rounded-full -top-2 -right-2 shadow-sm">24/7</span>
           </a>
