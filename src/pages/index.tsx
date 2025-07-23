@@ -373,7 +373,7 @@ const Home = () => {
         </section>
 
 
-        <TeethAlignmentSection/>
+       
 
         {/* Services Grid */}
         <section id="services" className="py-20 relative overflow-hidden bg-gradient-to-br from-gray-50 to-lime-50">
@@ -510,6 +510,8 @@ const Home = () => {
         </div>
       </div>
     </section>
+
+    <TeethAlignmentSection/>
   
 
         {/* Testimonials */}
