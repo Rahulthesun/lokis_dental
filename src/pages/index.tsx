@@ -12,7 +12,6 @@ import {
 
 import { Award, Users, Clock, Shield, Heart } from 'lucide-react';
 import Footer from "../components/Footer"
-import MapSection from "../components/MapSection"
 import ContactLocationSection from '../components/GetInTouch';
 import TeethAlignmentSection from '../components/TeethAlignment';
 
@@ -325,7 +324,7 @@ const Home = () => {
                   <img
                     src="/assets/dr_img.jpg"
                     alt="Dr. Lokeswari"
-                    className="mx-auto w-48 sm:w-56 md:w-64 rounded-full object-cover object-center shadow-xl"
+                    className="mx-auto w-48 sm:w-56 md:w-full rounded-full object-cover object-center shadow-xl"
                   />
                 </div>
                 <div className="absolute top-6 right-6 w-8 h-8 bg-lime-400/60 rounded-full animate-pulse"></div>
