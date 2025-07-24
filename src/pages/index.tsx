@@ -194,9 +194,11 @@ const Home = () => {
             {item.name}
           </a>
         ))}
+        <a href="#contact">
         <button className="w-full text-center bg-lime-500 text-white px-3 py-3 rounded-md hover:bg-lime-600 transition-all duration-300 font-medium shadow-md">
           Book Appointment
         </button>
+        </a>
       </div>
     </div>
   )}
