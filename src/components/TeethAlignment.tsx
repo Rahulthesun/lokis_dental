@@ -77,10 +77,13 @@ const TeethAlignmentSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <a href="https://wa.me/919840184964?text=I%20would%20like%20to%20Schedule%20a%20Free%20Teeth%20Alignment%20Consultation">
               <button className="group bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
                 Get Your Free Alignment Consultation
                 <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
               </button>
+              </a>
+              
             </div>
           </div>
 

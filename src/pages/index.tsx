@@ -32,28 +32,28 @@ const Home = () => {
 
   const testimonials = [
     {
-      img: "https://lh3.googleusercontent.com/a-/ALV-UjU2N4MckIAFXRqZ4tqC5_vn603Bo7X7ADvj_lFPKmDp0Yu7y-LS=w108-h108-p-rp-mo-br100",
+      img: "/assets/satish.png",
       name: "Sathish Gnanavelu",
       rating: 5,
       review: "Doctor mam clearly explain the teeth status and suggested tooth brush and paste found effective.Treatment found effective. Thanks.",
       weeks: "3 months ago"
     },
     {
-      img:"https://lh3.googleusercontent.com/a-/ALV-UjXtZdHJjB0gBPf-WsV2Pa5eCMDZCntd4dpNAFOm4hdFxMfQbv4W=w108-h108-p-rp-mo-br100",
+      img:"/assets/sathya.png",
       name: "Sathya J",
       rating: 5,
       review: "Best experience ever I had. Dr.loki's so friendly and clearly explaining every doubts with patience.The Dentist is a great place to go for your dental care and health. Thank you Dr. Loki.",
       weeks: "11 months ago"
     },
     {
-      img: "https://lh3.googleusercontent.com/a-/ALV-UjWaT3pPQUQDWo_ir9FEhggHzQVE9wjofAvFgqgzV8Do_bdKfw0=w108-h108-p-rp-mo-br100",
+      img: "/assets/janani.png",
       name: "Janani Arumugam",
       rating: 5,
       review: "We went for wisdom tooth extraction, doctor made me feel comfortable & explained the situation clearly. Overall good experience.",
       weeks: "12 months ago"
     },
     {
-      img: "Good ambiance and friendly consultation had a good experience",
+      img: "/assets/bala.png",
       name: "Bala Subramanian",
       rating: 5,
       review: "Good ambiance and friendly consultation had a good experience",
@@ -159,9 +159,12 @@ const Home = () => {
             {item.name}
           </a>
         ))}
-        <button className="bg-lime-500 text-white px-6 py-2 rounded-full hover:bg-lime-600 transition-all duration-300 shadow-lg hover:shadow-lime-400/30 transform hover:scale-105 font-medium">
-          Book Appointment
-        </button>
+        <a href="#contact">
+          <button className="bg-lime-500 text-white px-6 py-2 rounded-full hover:bg-lime-600 transition-all duration-300 shadow-lg hover:shadow-lime-400/30 transform hover:scale-105 font-medium">
+            Book Appointment
+          </button>
+        </a>
+        
       </div>
 
       {/* Mobile menu button */}
@@ -226,7 +229,7 @@ const Home = () => {
               <button onClick={() => window.location.href = '#contact'} className="bg-gradient-to-r from-lime-400 to-lime-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-lime-500 hover:to-lime-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-lime-400/25">
                 Book Free Consultation
               </button>
-              <button onClick={() => window.location.href = 'https://your-link-here.com'} className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/20 hover:border-white/50 transform hover:scale-105 transition-all duration-300">
+              <button onClick={() => window.location.href = 'https://wa.me/919840184964?text=Hi%2C%20I%E2%80%99d%20like%20to%20book%20a%20dental%20appointment.'} className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/20 hover:border-white/50 transform hover:scale-105 transition-all duration-300">
                 Learn More
               </button>
             </div>
@@ -380,9 +383,11 @@ const Home = () => {
                   <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-6">
                     Dr. Lokeswari brings years of experience and expertise in comprehensive dental care. With a strong focus on delivering excellent patient care, she ensures every treatment is comfortable and effective.
                   </p>
+                  <a href='https://wa.me/919840184964?text=Hi%2C%20I%E2%80%99d%20like%20to%20book%20a%20dental%20appointment.'>
                   <button className="w-full sm:w-auto bg-gradient-to-r from-lime-500 to-emerald-500 text-white px-6 py-3 rounded-full font-semibold hover:from-lime-600 hover:to-emerald-600 transition-all duration-300 shadow-lg">
                     Schedule a Consultation
                   </button>
+                  </a>
                 </div>
               </motion.div>
             </div>
@@ -433,23 +438,28 @@ const Home = () => {
                     </div>
                     <h3 className="text-xl font-semibold text-gray-800 mb-3 font-poppins group-hover:text-lime-600 transition-colors duration-300">{service.name}</h3>
                     <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300 mb-6 flex-grow">{service.description}</p>
+                    <a href="https://wa.me/919840184964?text=Hi%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20your%20dental%20Services">
                     <button className="text-lime-500 font-medium flex items-center group-hover:text-lime-600 transition-colors duration-300 mt-auto">
                       Learn more
                       <FaChevronRight className="ml-2 text-sm" />
                     </button>
+                    </a>
+                    
                   </div>
                 </motion.div>
               ))}
             </div>
             
             <div className="text-center mt-16">
-              <motion.button 
-                className="bg-gradient-to-r from-lime-500 to-emerald-500 text-white px-10 py-4 rounded-full text-lg font-semibold hover:from-lime-600 hover:to-emerald-600 transition-all duration-300 shadow-lg hover:shadow-lime-400/25 transform hover:scale-105"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                View All Services
-              </motion.button>
+              <a href="https://wa.me/919840184964?text=Hi%2C%20I%E2%80%99d%20like%20to%20learn%20more%20about%20your%20dental%20Services">
+                <motion.button 
+                  className="bg-gradient-to-r from-lime-500 to-emerald-500 text-white px-10 py-4 rounded-full text-lg font-semibold hover:from-lime-600 hover:to-emerald-600 transition-all duration-300 shadow-lg hover:shadow-lime-400/25 transform hover:scale-105"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  View All Services
+                </motion.button>
+              </a>
             </div>
           </div>
         </section>
@@ -620,9 +630,13 @@ const Home = () => {
                   <span className="font-bold"> Valid until August 1st , 2025</span>
                 </p>
               </div>
-              <button className="bg-gray-800 text-white px-8 py-3 rounded-full hover:bg-gray-900 transition-all duration-300 shadow-lg transform hover:scale-105 mt-4">
-                Claim Offer Now
-              </button>
+              <a href="https://wa.me/919840184964?text=Claim%20my%2010%25%20Discount%20on%20all%20Dental%20Services">
+                <button className="bg-gray-800 text-white px-8 py-3 rounded-full hover:bg-gray-900 transition-all duration-300 shadow-lg transform hover:scale-105 mt-4">
+                   Claim Offer Now
+                </button>
+
+              </a>
+              
             </div>
           </div>
         </section>
@@ -652,7 +666,7 @@ const Home = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          <a href="https://wa.me/919840183964?text=Hi%2C%20I%E2%80%99d%20like%20to%20book%20a%20dental%20appointment." target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white p-4 rounded-full shadow-xl hover:bg-green-600 transition-all duration-300 flex items-center justify-center">
+          <a href="https://wa.me/919840184964?text=Hi%2C%20I%E2%80%99d%20like%20to%20book%20a%20dental%20appointment." target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white p-4 rounded-full shadow-xl hover:bg-green-600 transition-all duration-300 flex items-center justify-center">
             <FaWhatsapp className="text-2xl" />
             <span className="ml-2 absolute bg-white text-green-500 text-xs font-bold px-2 py-1 rounded-full -top-2 -right-2 shadow-sm">24/7</span>
           </a>

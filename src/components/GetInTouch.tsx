@@ -137,16 +137,16 @@ const ContactLocationSection: React.FC = () => {
                 
                 {/* Social Media Links */}
                 <div className="flex space-x-4 pt-4">
-                  <a href="#" className="bg-gray-600 hover:bg-gray-500 p-3 rounded-full transition-colors duration-200">
+                  <a href="https://www.instagram.com/drlokisdental/" className="bg-gray-600 hover:bg-gray-500 p-3 rounded-full transition-colors duration-200">
                     <Facebook className="text-white w-5 h-5" />
                   </a>
-                  <a href="#" className="bg-gray-600 hover:bg-gray-500 p-3 rounded-full transition-colors duration-200">
+                  <a href="https://www.instagram.com/drlokisdental/" className="bg-gray-600 hover:bg-gray-500 p-3 rounded-full transition-colors duration-200">
                     <Instagram className="text-white w-5 h-5" />
                   </a>
                   <a href="mailto:hello@drlokis.in" className="bg-gray-600 hover:bg-gray-500 p-3 rounded-full transition-colors duration-200">
                     <Mail className="text-white w-5 h-5" />
                   </a>
-                  <a href="https://wa.me/919840183964?text=Hi%2C%20I%E2%80%99d%20like%20to%20book%20a%20dental%20appointment.
+                  <a href="https://wa.me/919840184964?text=Hi%2C%20I%E2%80%99d%20like%20to%20book%20a%20dental%20appointment.
 " className="bg-gray-600 hover:bg-gray-500 p-3 rounded-full transition-colors duration-200">
                     <MessageCircle className="text-white w-5 h-5" />
                   </a>
