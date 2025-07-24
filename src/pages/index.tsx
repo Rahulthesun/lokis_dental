@@ -105,13 +105,30 @@ const Home = () => {
 
   return (
     <>
-      <Head>
-        <title>Dr. LOKI's Dental & Orthodontic Centre - Your Smile, Our Pride</title>
-        <meta name="description" content="Premier dental care and orthodontic treatments in Chennai. Dr. Lokeshwari offers comprehensive dental services including cosmetic dentistry, orthodontics, and smile makeovers." />
-        <meta name="keywords" content="dentist Chennai, orthodontist, dental clinic, teeth whitening, braces, dental implants, cosmetic dentistry, smile makeover, Dr Lokeshwari" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="https://cdn.tailwindcss.com"></script>
-      </Head>
+     <Head>
+      <title>Dr. LOKI's Dental & Orthodontic Centre - Your Smile, Our Pride</title>
+      <meta name="description" content="Premier dental care and orthodontic treatments in Chennai. Dr. Lokeshwari offers comprehensive dental services including cosmetic dentistry, orthodontics, and smile makeovers." />
+      <meta name="keywords" content="dentist Chennai, orthodontist, dental clinic, teeth whitening, braces, dental implants, cosmetic dentistry, smile makeover, Dr Lokeshwari" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="author" content="Dr. Lokeshwari" />
+      <meta name="robots" content="index, follow" />
+
+      <meta property="og:title" content="Dr. LOKI's Dental & Orthodontic Centre - Your Smile, Our Pride" />
+      <meta property="og:description" content="Experience expert dental and orthodontic care in Chennai with Dr. Lokeshwari. Smile with confidence!" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://drlokis.in/" />
+      <meta property="og:image" content="/assets/thumbnail.png" /> 
+
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Dr. LOKI's Dental & Orthodontic Centre" />
+      <meta name="twitter:description" content="Your trusted partner for dental and orthodontic treatments in Chennai." />
+      <meta name="twitter:image" content="/assets/thumbnail.png" /> 
+
+      <link rel="icon" type="image/png" href="/assets/white_logo_favicon.png" /> 
+
+      <script src="https://cdn.tailwindcss.com"></script>
+    </Head>
 
 
       
