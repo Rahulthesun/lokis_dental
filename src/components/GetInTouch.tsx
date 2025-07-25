@@ -143,7 +143,7 @@ const ContactLocationSection: React.FC = () => {
                   <a href="https://www.instagram.com/drlokisdental/" className="bg-gray-600 hover:bg-gray-500 p-3 rounded-full transition-colors duration-200">
                     <Instagram className="text-white w-5 h-5" />
                   </a>
-                  <a href="mailto:hello@drlokis.in" className="bg-gray-600 hover:bg-gray-500 p-3 rounded-full transition-colors duration-200">
+                  <a href="mailto:smiles@drlokis.in" className="bg-gray-600 hover:bg-gray-500 p-3 rounded-full transition-colors duration-200">
                     <Mail className="text-white w-5 h-5" />
                   </a>
                   <a href="https://wa.me/919840184964?text=Hi%2C%20I%E2%80%99d%20like%20to%20book%20a%20dental%20appointment.
