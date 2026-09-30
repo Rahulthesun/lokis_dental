@@ -14,6 +14,7 @@ import { Award, Users, Clock, Shield, Heart } from 'lucide-react';
 import Footer from "../components/Footer"
 import ContactLocationSection from '../components/GetInTouch';
 import TeethAlignmentSection from '../components/TeethAlignment';
+import OnlineConsultationSection from '../components/OnlineConsultation';
 
 
 
@@ -229,7 +230,7 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button onClick={() => window.location.href = '#contact'} className="bg-gradient-to-r from-lime-400 to-lime-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-lime-500 hover:to-lime-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-lime-400/25">
-                Book Free Consultation
+                Book Consultation
               </button>
               <button onClick={() => window.location.href = 'https://wa.me/919840184964?text=Hi%2C%20I%E2%80%99d%20like%20to%20book%20a%20dental%20appointment.'} className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/20 hover:border-white/50 transform hover:scale-105 transition-all duration-300">
                 Learn More
@@ -541,7 +542,9 @@ const Home = () => {
     </section>
 
     <TeethAlignmentSection/>
-  
+
+    <OnlineConsultationSection/>
+
 
         {/* Testimonials */}
         <section className="py-20 bg-gradient-to-br from-lime-500 to-emerald-600 relative overflow-hidden">
@@ -618,31 +621,6 @@ const Home = () => {
             </div>
           </div>
         </section>
-
-        {/* Limited Time Offer */}
-        <section className="py-20 bg-gradient-to-r from-yellow-400 to-yellow-500">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col items-center justify-between">
-              <div className="text-center mb-6 md:mb-0">
-                <h3 className="text-3xl font-bold text-gray-800 mb-2 font-poppins">
-                  🎉 Limited Time Offer - 10% OFF
-                </h3>
-                <p className="text-gray-800 text-md mt-5">
-                  Get 10% off on teeth cleaning or whitening services! 
-                  <span className="font-bold"> Valid until August 1st , 2025</span>
-                </p>
-              </div>
-              <a href="https://wa.me/919840184964?text=Claim%20my%2010%25%20Discount%20on%20all%20Dental%20Services">
-                <button className="bg-gray-800 text-white px-8 py-3 rounded-full hover:bg-gray-900 transition-all duration-300 shadow-lg transform hover:scale-105 mt-4">
-                   Claim Offer Now
-                </button>
-
-              </a>
-              
-            </div>
-          </div>
-        </section>
-
         <ContactLocationSection/>
 
         {/* Footer */}
