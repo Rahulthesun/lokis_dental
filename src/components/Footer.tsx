@@ -94,13 +94,14 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                 {/* Left-aligned Buildify link */}
                 <div className="order-1 md:order-none">
-                <a 
-                    href="https://buildify-web.com" 
-                    target="_blank" 
+                <a
+                    href="https://buildify-web.com"
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white font-bold hover:text-lime-500 transition-colors duration-200 text-md flex items-center"
+                    className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors duration-200"
                 >
-                    <span className="mr-1 font-inter">&lt;/&gt;</span>Buildify-Web
+                    <span className="text-xs tracking-widest uppercase">Built by</span>
+                    <img src="/assets/buildify_logo.png" alt="Buildify" className="h-8 w-auto" />
                 </a>
                 </div>
                 
